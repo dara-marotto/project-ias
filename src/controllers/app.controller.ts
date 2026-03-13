@@ -6,8 +6,12 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('news')
-  async getPlayerSummary(
-  ) {
+  async getPlayerSummary() {
     return await this.appService.getNewsForApp()
+  }
+
+  @Get('owned-games')
+  async getOwnedGames() {
+    return await this.appService.getOwnedGames(); 
   }
 }
